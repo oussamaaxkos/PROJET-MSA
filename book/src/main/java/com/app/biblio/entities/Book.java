@@ -1,11 +1,4 @@
 package com.app.biblio.entities;
-
-
-
-
-
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,20 +11,20 @@ import jakarta.persistence.Table;
 @Entity
 @Table (name = "book")
 public class Book {
-    @Id 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     public Long getId() {
         return id;
     }
-    private String titre;
-    
-    public void setTitre(String name) {
-        this.titre = name;
+    private String title;
+
+    public void setTitle(String title) {
+        this.title = title;
     }
-    public String getTitre() {
-        return titre;
+    public String getTitle() {
+        return title;
     }
-    
-    
+
+
 }
