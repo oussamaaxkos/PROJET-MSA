@@ -9,16 +9,16 @@ Les images montrent le déploiement et l'exécution d'une application microservi
 Lancement de tous les conteneurs avec `docker compose up -d` :
 
 **Conteneurs en cours d'exécution :**
-- ✅ `db_book`, `db_emprunter`, `db_user` - Bases de données MySQL (Running)
-- ✅ `zookeeper` - Coordinateur pour Kafka (Running)
-- ✅ `kafka` - Message broker (Running)
-- 🔄 `eureka-service` - Service de découverte (Recreated - redémarrage)
-- 🔄 `book-service`, `notification-service`, `user-service`, `gateway-service`, `emprunter-service` - Microservices (Recreated)
+- `db_book`, `db_emprunter`, `db_user` - Bases de données MySQL (Running)
+- `zookeeper` - Coordinateur pour Kafka (Running)
+- `kafka` - Message broker (Running)
+- `eureka-service` - Service de découverte (Recreated - redémarrage)
+- `book-service`, `notification-service`, `user-service`, `gateway-service`, `emprunter-service` - Microservices (Recreated)
 
 **Erreurs critiques** :
-- ❌ **"Unable to access jarfile target/*.jar"** - Les fichiers JAR n'existent pas dans les conteneurs
-- ❌ Services métier sortent avec **code 1** (échec)
-- ⚠️ **commons-logging.jar conflict** - Problème de dépendance
+- **"Unable to access jarfile target/*.jar"** - Les fichiers JAR n'existent pas dans les conteneurs
+- Services métier sortent avec **code 1** (échec)
+- **commons-logging.jar conflict** - Problème de dépendance
 
 ---
 
@@ -70,7 +70,7 @@ Initializing database files
 - Même processus d'initialisation
 - Création des utilisateurs et bases de données
 
-✅ **Toutes les bases MySQL sont opérationnelles**
+**Toutes les bases MySQL sont opérationnelles**
 
 ---
 
@@ -98,7 +98,7 @@ INFO Client environment:java.version=11.0.18
 INFO Client environment:java.vendor=Azul Systems, Inc.
 ```
 
-✅ **Infrastructure Kafka fonctionnelle**
+**Infrastructure Kafka fonctionnelle**
 
 ---
 
@@ -119,7 +119,7 @@ Compiling 1 source file with javac [release 17]
 [INFO] --- surefire:3.5.2:test (skipped)
 ```
 
-✅ **Build réussi localement**
+**Build réussi localement**
 
 ---
 
@@ -152,7 +152,7 @@ Initializing Spring embedded WebApplicationContext
 Root WebApplicationContext: initialization completed in 2227 ms
 ```
 
-⚠️ **Avertissement commons-logging** mais Eureka démarre correctement
+**Avertissement commons-logging** mais Eureka démarre correctement
 
 ---
 
@@ -210,7 +210,7 @@ Cela permet aux services internes de se connecter via `kafka:29092` tout en gard
 
 ---
 
-# 🔴 Problème principal identifié
+# Problème principal identifié
 
 **Les fichiers JAR ne sont pas créés dans les conteneurs Docker** :
 ```
